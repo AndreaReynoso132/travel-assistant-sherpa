@@ -1,7 +1,9 @@
+// src/app.ts
 import express, { Application } from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import destinationRoutes from "./routes/destinationRoutes";
+import luggageWeatherRoutes from "./routes/luggageWeatherRoutes";
 
 dotenv.config();
 
@@ -11,6 +13,7 @@ app.use(bodyParser.json());
 
 // Rutas de la API
 app.use("/api", destinationRoutes);
+app.use("/api", luggageWeatherRoutes);
 
 // Ruta de prueba
 app.get("/", (_req, res) => {
